@@ -1,0 +1,14 @@
+{
+	"name": "ovogenix",	
+	"image": "mcr.microsoft.com/devcontainers/base:alpine-3.20",
+	"remoteUser": "root",
+
+	"postCreateCommand": "/bin/sh /workspaces/ovogenix/.devcontainer/setup.sh",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"golang.go"
+			]
+		}
+	}
+}
