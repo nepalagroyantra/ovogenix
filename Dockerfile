@@ -20,4 +20,4 @@ RUN go build -o server main.go
 EXPOSE 8003
 
 # Command to run the compiled binary
-CMD ["./main"]
+CMD ["./server"]
