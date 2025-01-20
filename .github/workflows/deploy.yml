@@ -1,0 +1,31 @@
+name: Deploy on VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Connect to VPS and deploy
+      - name: SSH into VPS and deploy
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.HOST_161 }}
+          username: ${{ secrets.USER_161 }}
+          key: ${{ secrets.PRIVATE_KEY_161 }}
+          port: 22
+
+          script: |
+            cd /home/cb/projects/ovogenix || exit 1            
+            docker build -t ovogenix .
+            docker stop ovogenix || true
+            docker rm ovogenix || true
+            docker run -d --name api.chetanbudathoki.com.np -p 8003:8003 ovogenix

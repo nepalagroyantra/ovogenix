@@ -1,0 +1,18 @@
+[
+  {
+    "iot_id": "device_123",
+    "temperature": 24.5,
+    "humidity": 60.2,
+    "gas": 0.98,
+    "gyro": "x:1.0, y:0.5, z:0.2",
+    "timestamp": "2025-01-20T12:03:31Z"
+  },
+  {
+    "iot_id": "device_123",
+    "temperature": 24.5,
+    "humidity": 60.2,
+    "gas": 0.98,
+    "gyro": "x:1.0, y:0.5, z:0.2",
+    "timestamp": "2025-01-20T12:03:56Z"
+  }
+]
